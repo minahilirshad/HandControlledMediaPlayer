@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Controlled Media Player</title>
+    <style>
+      /* Add CSS styles here */
+      @font-face {
+        font-family: 'CustomFont';
+        src: url('path/to/your/custom-font.ttf') format('truetype');
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(#f7e5f5, #e785c6);
+        margin: 0;
+        padding: 0;
+      }
+      
+      h1 {
+        font-family: 'CustomFont', Arial, sans-serif;
+        color: #b51562;
+        text-align: center;
+        padding: 10px;
+        border-radius: 15px;
+        box-shadow: 0 2px 5px rgba(108, 78, 78, 0.1);
+      }
+      
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        background: linear-gradient(#d819c9, #75125f);
+        border-radius: 60px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+      }
+      
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        padding: 10px;
+        color: #ffffff;
+        animation: flicker 1s infinite;
+      }
+      
+      @keyframes flicker {
+        0%, 50%, 100% {
+          opacity: 1;
+        }
+        25%, 75% {
+          opacity: 0.3;
+        }
+      }
+      
+      h2 {
+        color: #fefefe;
+        margin-bottom: 10px;
+      }
+      
+      h3 {
+        color: #ffffff;
+        margin-bottom: 10px;
+      }
+      
+      ul {
+        color: #ffffff;
+        margin-left: 20px;
+      }
+      
+      .button-container {
+        margin-top: 0px;
+      }
+      
+      button {
+        background-color: #42172d;
+        color: #ffffff;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      button:hover {
+        background-color: #ff0080;
+      }
+      
+      .camera-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+      }
+
+      .camera-image {
+        position:sticky ;
+        top: 0;
+        right: 0;
+        width: 80px;
+        height: 80px;
+      }
+
+      .gesture-item {
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>&#127925; Welcome to the Hand Controlled Media Player &#127925;</h1>
+      <h2>About Us</h2><br><br>
+      <img src="camera.png" alt="Camera" class="camera-image">
+      <p style="color: #b2ef48;">E<span style="color: #ff0080;">x</span>p<span style="color: #ff0066;">e</span>r<span style="color: #ff004d;">i</span>e<span style="color: #ff0033;">n</span>c<span style="color: #ff0019;">e</span> a <span style="color: #ff0000;">n</span>e<span style="color: #ff1900;">w</span> w<span style="color: #ff3300;">a</span>y <span style="color: #ff4d00;">o</span>f <span style="color: #ff6600;">c</span>o<span style="color: #ff8000;">n</span>t<span style="color: #ff9900;">r</span>o<span style="color: #ffb300;">l</span>l<span style="color: #ffcc00;">i</span>n<span style="color: #ffe500;">g</span> y<span style="color: #ffff00;">o</span>u<span style="color: #e5ff00;">r</span> m<span style="color: #ccff00;">e</span>d<span style="color: #b3ff00;">i</span>a <span style="color: #99ff00;">p</span>l<span style="color: #80ff00;">a</span>y<span style="color: #66ff00;">e</span>r <span style="color: #4dff00;">w</span>i<span style="color: #33ff00;">t</span>h <span style="color: #1aff00;">s</span>i<span style="color: #00ff00;">m</span>p<span style="color: #00ff19;">l</span>e <span style="color: #00ff33;">h</span>a<span style="color: #00ff4d;">n</span>d <span style="color: #00ff66;">g</span>e<span style="color: #00ff80;">s</span>t<span style="color: #00ff99;">u</span>r<span style="color: #00ffb3;">e</span>s. C<span style="color: #00ffcc;">l</span>i<span style="color: #00ffe5;">c</span>k <span style="color: #00ffff;">t</span>h<span style="color: #00e5ff;">e</span> b<span style="color: #00ccff;">u</span>t<span style="color: #00b3ff;">t</span>o<span style="color: #0099ff;">n</span> b<span style="color: #0080ff;">e</span>l<span style="color: #0066ff;">o</span>w t<span style="color: #004dff;">o</span> s<span style="color: #0033ff;">t</span>a<span style="color: #0019ff;">r</span>t u<span style="color: #0000ff;">s</span>i<span style="color: #1900ff;">n</span>g t<span style="color: #3300ff;">h</span>e h<span style="color: #4d00ff;">a</span>n<span style="color: #6600ff;">d</span>-c<span style="color: #8000ff;">o</span>n<span style="color: #9900ff;">t</span>r<span style="color: #b300ff;">o</span>l<span style="color: #cc00ff;">l</span>e<span style="color: #e500ff;">d</span> m<span style="color: #ff00ff;">e</span>d<span style="color: #ff00e5;">i</span>a p<span style="color: #ff00cc;">l</span>a<span style="color: #ff00b3;">y</span>e<span style="color: #ff0099;">r</span>.</p>
+<h2>Gestures and Their Functions</h2><br>
+      <ul>
+        <li class="gesture-item"><img src="palm.jpg" alt="Palm" class="camera-icon"><span style="color: #ff69b4;">P</span>alm: Play/Pause</li><br><br>
+        <li class="gesture-item"><img src="two.jpg" alt="Two Fingers" class="camera-icon"><span style="color: #ff69b4;">T</span>wo Fingers: Volume Up</li><br><br>
+        <li class="gesture-item"><img src="three.jpg" alt="Three Fingers" class="camera-icon"><span style="color: #ff69b4;">T</span>hree Fingers: Volume Down</li><br><br>
+        <li class="gesture-item"><img src="four.jpg" alt="Four Fingers" class="camera-icon"><span style="color: #ff69b4;">F</span>our Fingers: Forward</li><br><br><br><br>
+      </ul>
+      <div class="button-container">
+        <form action="http://127.0.0.1:5000/run-python-code" method="post">
+          <button type="submit">Start Media Player Controller</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
